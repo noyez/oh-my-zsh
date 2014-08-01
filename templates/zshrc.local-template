@@ -1,0 +1,67 @@
+
+export EDITOR=vim
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+
+ZSH_THEME="robbyrussell"
+#ZSH_THEME="noyez2"
+
+# get proper dircolors when using tab completion
+eval `dircolors`
+zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
+autoload -Uz compinit
+compinit
+
+setopt noshare_history
+
+#### PATHS ####
+KDEPATH=/usr/local/kde4
+PATH=$HOME/local/bin:$KDEPATH/bin:$PATH:/opt/local/bin:/usr/texbin:/usr/local/afrl/bin
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/local/lib:$KDEPATH/lib:/opt/local/lib:/usr/local/afrl/lib
+export PATH
+export LD_LIBRARY_PATH
+export EDITOR=vim
+#export DYLD_BIND_AT_LAUNCH=1
+
+
+#### Aliases ####
+cdpath=(~/Documents/Math ~/source/ ~/source/trd2_svn_git)
+hosts=(ithryn.net lnx-perf inet)
+alias gn=growlnotify
+#alias last='last -a'
+#alias qmake=qmake-mac
+alias ssh='ssh -A'
+
+#source ~/.zshrc_android
+alias a=alias
+
+##### completers (could be moved into ~/.dotfiles/zsh/complete.zsh) ####
+#zstyle -e ':completion:*' hosts 'reply=($hosts)'
+zstyle ':completion:*:hosts' hosts $hosts
+#zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+#zstyle ':completion:*' format 'Completing %d'
+#zstyle ':completion:*' group-name ''
+#zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
+#zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+#zstyle ':completion:*' list-colors ''
+#zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+#zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+#zstyle ':completion:*' menu select=long
+#zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+#zstyle ':completion:*' use-compctl false
+#zstyle ':completion:*' verbose true
+#
+#zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+#zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
