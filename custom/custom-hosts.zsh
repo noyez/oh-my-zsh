@@ -26,7 +26,7 @@ function load_local_plugins() {
 }
 
 echo " -- on host `hostname` -- "
-CUSTOM_ZSH_LOCAL=$HOME/.zsh.local.`hostname`
+CUSTOM_ZSH_LOCAL=$HOME/.zshrc.local.`hostname`
 if [ -e $CUSTOM_ZSH_LOCAL ] ; then
     echo "sourcing $CUSTOM_ZSH_LOCAL" 
     source $CUSTOM_ZSH_LOCAL
