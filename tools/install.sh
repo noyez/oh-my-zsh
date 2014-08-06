@@ -1,10 +1,10 @@
 ZSH=`/usr/bin/env|grep 'ZSH='|cut -d '=' -f 2`
 ZSH_BASEDIR=$HOME/.dotfiles/oh-my-zsh
-if [ -d "$ZSH" ]
-then
-  echo "\033[0;33mYou already have Oh My Zsh installed.\033[0m You'll need to remove $ZSH if you want to install"
-  exit
-fi
+#if [ -d "$ZSH" ]
+#then
+#  echo "\033[0;33mYou already have Oh My Zsh installed.\033[0m You'll need to remove $ZSH if you want to install"
+#  exit
+#fi
 #elif [ -d $ZSH_BASEDIR ]
 #then
 #  echo "\033[0;33mYou already have One Oh My Zsh Directory.\033[0m You'll need to remove  $ZSH_BASEDIR if you want to clone"
@@ -34,7 +34,7 @@ export PATH=\"$PATH\"
 " ~/.zshrc
 
 echo "\033[0;34mTime to change your default shell to zsh!\033[0m"
-chsh -s `which zsh`
+#chsh -s `which zsh`
 
 echo "\033[0;32m"'         __                                     __   '"\033[0m"
 echo "\033[0;32m"'  ____  / /_     ____ ___  __  __   ____  _____/ /_  '"\033[0m"

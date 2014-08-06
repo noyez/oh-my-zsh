@@ -31,20 +31,5 @@ if [ -e $CUSTOM_ZSH_LOCAL ] ; then
     echo "sourcing $CUSTOM_ZSH_LOCAL" 
     source $CUSTOM_ZSH_LOCAL
 else
-    echo "No local zsh fil:e $CUSTOM_ZSH_LOCAL" 
+    echo "No local zsh file: $CUSTOM_ZSH_LOCAL" 
 fi
-
-##if [ `hostname` = "bkn" ]; then
-##    echo " -- on host `hostname` -- "
-###    source ~/.zshrc_android
-##elif [ `hostname` = "noyez" ]; then
-##    echo " -- on host `hostname` -- "
-##    source ~/.zsh.local
-###    echo $fpath
-###    local_plugins=( svn git )
-###    echo $local_plugins
-###    load_local_plugins 
-###    echo $fpath
-##else 
-##    echo " -- on host `hostname` (not custom section) -- "
-##fi
