@@ -18,7 +18,10 @@ ZSH_THEME="robbyrussell"
 #ZSH_THEME="noyez2"
 
 # get proper dircolors when using tab completion
-eval `dircolors`
+if (( $+commands[dircolors] )) ; then
+    # it exists
+    eval `dircolors`
+fi
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit
 compinit
